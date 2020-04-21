@@ -68,6 +68,10 @@ This Login has access to no DBs and has no priviledges in itself.
 It is there to attach a database user.   
 In this example it is called 'devlogin'
 
+![Image of devlogin creation]
+(https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/Login.jpg)
+
+
 2)  We install datamasking.bat into C:\Program Files\Actifio\scripts
 
 The only main modification needed is to change the path name to sqlcmd.exe
@@ -92,3 +96,9 @@ ALTER COLUMN LastName ADD MASKED WITH (FUNCTION = 'partial(2,"XXX",0)');
 CREATE USER [devlogin] FOR LOGIN [devlogin]
 GRANT SELECT ON dbo.customer TO devlogin;
 ```
+
+4)  We now create a workflow that calls the bat file created in step two.
+In this example we create an OnDemand DirectMount worklow that calls a bat file called dynamicmask.bat
+
+![Image of workflow creation]
+(https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/workflow.jpg)
