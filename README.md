@@ -80,8 +80,7 @@ You can learn the correct path with the 'where' command like this:
 C:\Users\av>where sqlcmd.exe
 C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\130\Tools\Binn\SQLCMD.EXE
 ```
-The bat file also references a SQL script so if you change the name of that script that also needs to be updated.
-We could also pass the name of that script down to the Connector via the workflow
+The bat file also references a SQL script but we are going to pass the name of that script to the bat file through the workflow.   This means you can use the bat file for many databases and editing is kept to a minimum.
 
 3)  We install a SQL script file into C:\Program Files\Actifio\scripts
 This contains our masking commands.
@@ -97,9 +96,10 @@ GRANT SELECT ON dbo.customer TO devlogin;
 ```
 
 4)  We now create a workflow that calls the bat file created in step two.
-In this example we create an OnDemand DirectMount worklow that calls a bat file called dynamicmask.bat
+In this example we create an OnDemand DirectMount worklow that calls a bat file called dynamicmask.bat 
+We set a parameter dynamicmask.sql that is passed to the bat file as %2 and eliminates the need to edit the bat file.
 
-![Image of workflow creation](https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/workflow.jpg)
+![Image of workflow creation](https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/workflow1.jpg)
 
 5)  We now run the workflow.  A new virtual database is created.  
 
