@@ -86,7 +86,7 @@ We could also pass the name of that script down to the Connector via the workflo
 3)  We install a SQL script file into C:\Program Files\Actifio\scripts
 This contains our masking commands.
 In this example we connect to a database called masksmalldb, we alter the table dbo.Customer to mask the column LastName.
-We then add a database user devlogin that usees the devlogin login.   We then allow that database user to perform selects on dbo.customer
+We then add a database user devlogin that uses the devlogin login.   We then allow that database user to perform selects on dbo.customer
 
 ```
 use masksmalldb;
@@ -104,8 +104,7 @@ In this example we create an OnDemand DirectMount worklow that calls a bat file 
 5)  We now run the workflow.  A new virtual database is created.  
 
 
-
-6)  To test we first login as a fully priviledged user and we can see two tables and all the data.
+6)  To test we first login to SQL Management Studio as a fully priviledged user and we can see two tables and all the data in our new virtual Database.
 
 ![Image of all data](https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/fulluserview.jpg)
 
@@ -113,6 +112,6 @@ We then login as devlogin.  Note this uses SQLServer Authentication which needs 
 
 ![Image of SQL Login](https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/SQLLogin.jpg)
 
-We can see only one table and the contents of that are partially masked as per rule:
+Looking at the same Virtual database, we can see only one table and the contents of that are partially masked as per rule:
 
 ![Image of mask data](https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/devuserview.jpg)
