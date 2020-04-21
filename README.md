@@ -68,8 +68,7 @@ This Login has access to no DBs and has no priviledges in itself.
 It is there to attach a database user.   
 In this example it is called 'devlogin'
 
-![Image of devlogin creation]
-(https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/Login.jpg)
+![Image of devlogin creation](https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/Login.jpg)
 
 
 2)  We install datamasking.bat into C:\Program Files\Actifio\scripts
@@ -100,5 +99,20 @@ GRANT SELECT ON dbo.customer TO devlogin;
 4)  We now create a workflow that calls the bat file created in step two.
 In this example we create an OnDemand DirectMount worklow that calls a bat file called dynamicmask.bat
 
-![Image of workflow creation]
-(https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/workflow.jpg)
+![Image of workflow creation](https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/workflow.jpg)
+
+5)  We now run the workflow.  A new virtual database is created.  
+
+
+
+6)  To test we first login as a fully priviledged user and we can see two tables and all the data.
+
+![Image of all data](https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/fulluserview.jpg)
+
+We then login as devlogin.  Note this uses SQLServer Authentication which needs to be allowed.
+
+![Image of SQL Login](https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/SQLLogin.jpg)
+
+We can see only one table and the contents of that are partially masked as per rule:
+
+![Image of mask data](https://github.com/Actifio/WindowsDynamicMasking/blob/master/Images/devuserview.jpg)
