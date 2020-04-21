@@ -1,4 +1,4 @@
-# Windows Dynamic Data Masking
+# Microsoft SQL Server Dynamic Data Masking
 
 
 In Microsoft SQL 2016 there is a function called Dynamic Data Masking. Details can be found here:
