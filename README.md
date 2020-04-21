@@ -73,8 +73,9 @@ In this example it is called 'devlogin'
 
 2)  We install datamasking.bat into C:\Program Files\Actifio\scripts
 
-The only main modification needed is to change the path name to sqlcmd.exe
-You can learn the correct path with the 'where' command like this:
+You should not need to make any edits at all this to script.
+If during testing you find the connector cannot locate sqlcmd.exe you will need to add the full path.
+Learn it as follows:
 
 ```
 C:\Users\av>where sqlcmd.exe
